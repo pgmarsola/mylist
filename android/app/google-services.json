@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "179007630871",
+    "firebase_url": "https://comprelocal-app.firebaseio.com",
+    "project_id": "comprelocal-app",
+    "storage_bucket": "comprelocal-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179007630871:android:dde313700303b2947fb652",
+        "android_client_info": {
+          "package_name": "com.example.mylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179007630871-f99ma4c2ju7apd58726ic17sm8k7t6ir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mylist",
+            "certificate_hash": "25982b5c67d2832e85f3010db3e78b1b20407fd3"
+          }
+        },
+        {
+          "client_id": "179007630871-ruiravi42v2uqi5p2mrg1bp5e44hvvgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-krzXdrituEE9wLRhTZVVdawDIiuV97g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179007630871-ruiravi42v2uqi5p2mrg1bp5e44hvvgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
