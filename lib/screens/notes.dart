@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:mylist/helpers/db.dart';
 import 'package:mylist/models/note.dart';
 import 'package:mylist/utils/colors.dart';
-import 'package:mylist/utils/form.dart';
 import 'package:mylist/widgets/action_button.dart';
 import 'package:mylist/widgets/topbar.dart';
 
@@ -41,6 +41,10 @@ class _NotesListState extends State<NotesList> {
   @override
   void initState() {
     super.initState();
+    _title.text = '';
+    _description.text = '';
+    _date.text = '';
+
     db = new DatabaseHelper();
     db.initDb();
 
@@ -90,17 +94,95 @@ class _NotesListState extends State<NotesList> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          FormText('Título', _title),
+                          TextFormField(
+                            controller: _title,
+                            keyboardType: TextInputType.text,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Título',
+                              labelText: 'Título',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          ),
                           Divider(
                             color: Colors.transparent,
                             height: 20.0,
                           ),
-                          FormText('Descrição', _description),
+                          TextFormField(
+                            controller: _description,
+                            keyboardType: TextInputType.text,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Descrição',
+                              labelText: 'Descrição',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          ),
                           Divider(
                             color: Colors.transparent,
                             height: 20.0,
                           ),
-                          FormText('Data', _date),
+                          TextFormField(
+                            inputFormatters: [
+                              MaskTextInputFormatter(mask: "##/##/####")
+                            ],
+                            controller: _date,
+                            keyboardType: TextInputType.number,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Data',
+                              labelText: 'Data',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          )
                         ],
                       ))),
             ),
@@ -156,17 +238,95 @@ class _NotesListState extends State<NotesList> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          FormText('Título', _title),
+                          TextFormField(
+                            controller: _title,
+                            keyboardType: TextInputType.text,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Título',
+                              labelText: 'Título',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          ),
                           Divider(
                             color: Colors.transparent,
                             height: 20.0,
                           ),
-                          FormText('Descrição', _description),
+                          TextFormField(
+                            controller: _description,
+                            keyboardType: TextInputType.text,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Descrição',
+                              labelText: 'Descrição',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          ),
                           Divider(
                             color: Colors.transparent,
                             height: 20.0,
                           ),
-                          FormText('Data', _date),
+                          TextFormField(
+                            inputFormatters: [
+                              MaskTextInputFormatter(mask: "##/##/####")
+                            ],
+                            controller: _date,
+                            keyboardType: TextInputType.number,
+                            validator: (valor) {
+                              if (valor.isEmpty && valor.length == 0) {
+                                return "Campo Obrigatório";
+                              }
+                            },
+                            decoration: new InputDecoration(
+                              hintText: 'Data',
+                              labelText: 'Data',
+                              labelStyle: TextStyle(color: verde2),
+                              contentPadding: EdgeInsets.only(
+                                  left: 14.0, bottom: 8.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: verde2),
+                                borderRadius:
+                                    BorderRadius.circular(screenHeight * 1.5),
+                              ),
+                            ),
+                          )
                         ],
                       ))),
             ),
@@ -269,9 +429,7 @@ class _NotesListState extends State<NotesList> {
               child: ListTile(
                 title: Text(listNote[index].title),
                 subtitle: Text(listNote[index].description),
-                leading: CircleAvatar(
-                  child: Text(listNote[index].title[0]),
-                ),
+                leading: Text(listNote[index].date),
               ),
               onTap: () => _updateNote(listNote[index]),
             ),
@@ -295,38 +453,6 @@ class _NotesListState extends State<NotesList> {
         },
         icon: Icon(Icons.add),
         label: Text('Tarefas'.toUpperCase()),
-      ),
-    );
-  }
-
-  Widget campoDescription() {
-    return new TextFormField(
-      controller: _description,
-      validator: (valor) {
-        if (valor.isEmpty && valor.length == 0) {
-          return "Campo Obrigatório";
-        }
-      },
-      decoration: new InputDecoration(
-        hintText: 'Descrição',
-        labelText: 'Descrição',
-        border: OutlineInputBorder(),
-      ),
-    );
-  }
-
-  Widget campoDate() {
-    return new TextFormField(
-      controller: _date,
-      validator: (valor) {
-        if (valor.isEmpty && valor.length == 0) {
-          return "Campo Obrigatório";
-        }
-      },
-      decoration: new InputDecoration(
-        hintText: 'Data',
-        labelText: 'Data',
-        border: OutlineInputBorder(),
       ),
     );
   }

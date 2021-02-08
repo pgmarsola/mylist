@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class GradientColor extends StatelessWidget {
-  var right;
-  var left;
+  final Color right;
+  final Color left;
 
   GradientColor(this.right, this.left);
 

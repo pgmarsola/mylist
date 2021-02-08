@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:mylist/screens/login.dart';
 import 'package:mylist/utils/colors.dart';
 import 'package:mylist/utils/gradient_color.dart';
 
@@ -26,7 +27,10 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             Icons.exit_to_app,
           ),
           onPressed: () {
-            exit(0);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Login()),
+            );
           },
         )
       ],

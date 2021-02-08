@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:mylist/utils/colors.dart';
 
 class ActionButton extends StatelessWidget {
-  Icon icon;
-  String titulo;
-  Function funcao;
-  double value;
+  final Icon icon;
+  final String titulo;
+  final Function funcao;
+  final double value;
 
   ActionButton(this.icon, this.titulo, this.funcao, this.value);
 
